@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SANTA MARIA NOVELLA</title>
+    <link rel="icon" href="./img/favicon.png" sizes="32x32" type="image/png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/sub.css" />
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.7.5/dist/smooth-scrollbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.7.4/dist/plugins/overscroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollToPlugin.min.js"></script>
+    <script src="./js/script.js"></script>
+  </head>
+  <body class="page-sub">
+    <!-- js 제어용 클래스(.page-sub) -->
+
+    <a href="#container" class="skip hidden">본문 바로가기</a>
+    <header id="header">
+      <div class="inner">
+        <nav>
+          <h1 class="logo">
+            <a href="./index.html"
+              ><i class="hidden">SANTA MARIA NOVELLA</i>
+            </a>
+          </h1>
+          <div class="gnb">
+            <button type="button" class="search">SEARCH</button>
+            <button type="button" class="cart">CART (0)</button>
+            <div class="menu">
+              <button type="button" class="menu-button" aria-label="메뉴/검색">
+                <span class="menu-line line1"></span>
+                <span class="menu-line line2"></span>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="menu-open">
+        <div class="menu-content inner">
+          <div class="menu-list">
+            <ul class="all-products">
+              <li>
+                <span><a href="sub.html">All Products</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Fragrances</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Skincare</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Body & Hair</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Home</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Gifts</a></span>
+              </li>
+            </ul>
+            <ul class="our-icons">
+              <li>
+                <span><a href="sub.html">Our Icons</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">I Giardini Medicei</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Melograno</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Tabacco Toscano</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Angeli di Firenze</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Pot Pourri</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Fresia</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Rosa Gardenia</a></span>
+              </li>
+            </ul>
+            <ul class="sub-menu">
+              <li>
+                <span><a href="sub.html">Our Story</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Boutiques</a></span>
+              </li>
+            </ul>
+          </div>
+          <ul class="card-list">
+            <li class="card-item">
+              <a href="#" class="item-link">
+                <div class="card-image">
+                  <img src="./img/card-item-img-01.jpg" alt="" />
+                  <div class="card-dim"></div>
+                </div>
+                <div class="card-text">
+                  <p>new</p>
+                  <strong>Carta d'armenia</strong>
+                </div>
+              </a>
+            </li>
+            <li class="card-item">
+              <a href="#" class="item-link">
+                <div class="card-image">
+                  <img src="./img/card-item-img-02.jpg" alt="" />
+                  <div class="card-dim"></div>
+                </div>
+                <div class="card-text">
+                  <p>new</p>
+                  <strong>Papers to Scent and Preserve Wool</strong>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <ul class="menu-bottom inner">
+          <li><a href="#">ACCOUNT</a></li>
+          <li class="lang"><a href="#">EN</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="scroll-container">
+      <div class="fade-out-wrapper">
+        <!-- .menu-open 페이드인, 아웃 제어용 -->
+        <main id="container">
+          <div class="menu-list-wrapper inner">
+            <ul class="sub-menu-list">
+              <li class="active">
+                <button type="button">All Products</button>
+              </li>
+              <li><button type="button">Fragrances</button></li>
+              <li><button type="button">Skincare</button></li>
+              <li><button type="button">Body & Hair</button></li>
+              <li><button type="button">Home</button></li>
+              <li><button type="button">Gifts</button></li>
+            </ul>
+          </div>
+          <div class="menu-title-wrapper inner">
+            <div class="title-left">
+              <div class="menu-title">
+                <h2>all products</h2>
+                <span class="count" aria-label="86 items">{86}</span>
+              </div>
+              <p class="group-info">
+                Olfactory discoveries, vivid voyages, and a
+                <sapn class="bold">heritage</sapn> that never ceases to amaze:
+                <br />
+
+                welcome to our world of fragrance. Originating from our roots in
+                apothecary art dating back to 1221, our olfactory <br />
+                creations are a unique blend of expertise,
+                <span class="bold">quality</span> ingredients, <br />
+                and the will to connect past and contemporary spirits. <br />
+                Discover the <span class="bold">Firenze 1221 edition</span>,
+                which pays homage to our heritage. <br />
+              </p>
+            </div>
+            <!-- <div class="title-right">
+            <img src="./img/sub-title-bg.jpg" alt="" />
+            <div class="fade-in-img">
+              <img src="./img/sub-title-item-group.png" alt="" />
+            </div>
+          </div> -->
+          </div>
+          <div class="filter-container inner">
+            <span class="filter-label">SORT BY</span>
+            <div class="custom-select">
+              <div class="selected" tabindex="0">
+                Best Sellers
+                <span class="arrow"></span>
+              </div>
+              <ul class="options">
+                <li data-value="best-sellers">Best Sellers</li>
+                <li data-value="price-descending">Price descending</li>
+                <li data-value="price-ascending">Price ascending</li>
+              </ul>
+            </div>
+          </div>
+          <div class="item-wrap">
+            <ul class="item-list list-top inner">
+              <li class="stack-item">
+                <div class="img-wrap">
+                  <img src="./img/sub-item-bg-01.png" alt="" />
+                  <div class="float-img">
+                    <img src="./img/sub-item-01.png" alt="" />
+                  </div>
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Fragrances</p>
+                    <strong>Melograno</strong>
+                  </div>
+                  <div class="info-right">
+                    <p>€ 125</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap">
+                  <img src="./img/sub-item-02.jpg" alt="" />
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Home</p>
+                    <strong
+                      >Melograno in <br />
+                      Scented Terracotta</strong
+                    >
+                  </div>
+                  <div class="info-right">
+                    <p>€ 70</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap">
+                  <img src="./img/sub-item-03.jpg" alt="" />
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Body&Hair</p>
+                    <strong>Melograno Dermo-protective Oil</strong>
+                  </div>
+                  <div class="info-right">
+                    <p>€ 125</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap">
+                  <img src="./img/sub-item-04.jpg" alt="" />
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Body&Hair</p>
+                    <strong
+                      >Tabacco <br />
+                      Toscano Bath Gel</strong
+                    >
+                  </div>
+                  <div class="info-right">
+                    <p>€ 50</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap">
+                  <img src="./img/sub-item-05.jpg" alt="" />
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Home</p>
+                    <strong
+                      >Room Diffuser <br />
+                      Tabacco Toscano</strong
+                    >
+                  </div>
+                  <div class="info-right">
+                    <p>€ 80</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap">
+                  <img src="./img/sub-item-06.jpg" alt="" />
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Body&Hair</p>
+                    <strong>Tabacco Toscano Soap</strong>
+                  </div>
+                  <div class="info-right">
+                    <p>€ 25</p>
+                  </div>
+                </div>
+              </li>
+              <li class="stack-item">
+                <div class="img-wrap">
+                  <img src="./img/sub-item-bg-02.png" alt="" />
+                  <div class="float-img">
+                    <img src="./img/sub-item-07.png" alt="" />
+                  </div>
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Fragrances</p>
+                    <strong>Tabacco Toscano</strong>
+                  </div>
+                  <div class="info-right">
+                    <p>€ 125</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="sub-ad-con">
+              <div class="ad-img">
+                <img src="./img/sub-ad-img.jpg" alt="" />
+              </div>
+              <div class="ad-info">
+                <div class="ad-text">
+                  <strong>Solid Soaps</strong>
+                  <p>
+                    <span class="bold-ad">Since 1859</span>, Santa Maria
+                    Novella’s soaps <br />
+                    have combined tradition <br />
+                    and innovation. <br />
+                    Crafted according to
+                    <sapn class="bold-ad">time-honored</sapn> recipes, <br />
+                    they use natural ingredients such as <br />
+                    natural oils, milk, and <br />
+                    botanical extracts to cleanse, nourish, and protect the
+                    skin.
+                    <br />
+                    For <span class="bold-ad">over 150 years</span>, these
+                    timeless formulations <br />
+                    have offered <br />
+                    gentle care while leaving a subtle, <br />
+                    enduring fragrance.
+                  </p>
+                </div>
+                <button type="button" class="view-more-ad">
+                  <img src="./img/view-more.svg" alt="" class="ad-arr" />
+                  <div class="change-txt">discover</div>
+                </button>
+              </div>
+            </div>
+            <ul class="item-list list-bottom inner">
+              <li class="stack-item">
+                <div class="img-wrap">
+                  <img src="./img/sub-item-bg-03.png" alt="" />
+                  <div class="float-img">
+                    <img src="./img/sub-item-08.png" alt="" />
+                  </div>
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Fragrances</p>
+                    <strong>Rosa Gardenia</strong>
+                  </div>
+                  <div class="info-right">
+                    <p>€ 125</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap">
+                  <img src="./img/sub-item-09.jpg" alt="" />
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Body&Hair</p>
+                    <strong
+                      >Rosa Gardenia <br />
+                      Fluid Body Cream</strong
+                    >
+                  </div>
+                  <div class="info-right">
+                    <p>€ 55</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap">
+                  <img src="./img/sub-item-10.jpg" alt="" />
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Fragrances</p>
+                    <strong>L'Iris</strong>
+                  </div>
+                  <div class="info-right">
+                    <p>€ 240</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap">
+                  <img src="./img/sub-item-11.jpg" alt="" />
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Home</p>
+                    <strong
+                      >Acqua della Regina <br />
+                      Scented Candle</strong
+                    >
+                  </div>
+                  <div class="info-right">
+                    <p>€ 75</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap">
+                  <img src="./img/sub-item-12.jpg" alt="" />
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Body&Hair</p>
+                    <strong
+                      >Acqua della <br />
+                      Regina Bath Gel</strong
+                    >
+                  </div>
+                  <div class="info-right">
+                    <p>€ 35</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap">
+                  <img src="./img/sub-item-13.jpg" alt="" />
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Fragrances</p>
+                    <strong>Alba di Seoul</strong>
+                  </div>
+                  <div class="info-right">
+                    <p>€ 125</p>
+                  </div>
+                </div>
+              </li>
+              <li class="stack-item">
+                <div class="img-wrap">
+                  <img src="./img/sub-item-bg-04.png" alt="" />
+                  <div class="float-img">
+                    <img src="./img/sub-item-14.png" alt="" />
+                  </div>
+                </div>
+                <div class="item-info">
+                  <div class="info-left">
+                    <p>Fragrances</p>
+                    <strong>Acqua della Regina</strong>
+                  </div>
+                  <div class="info-right">
+                    <p>€ 125</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="load-more"><button type="button">LOAD MORE</button></div>
+        </main>
+        <footer id="footer">
+          <div class="inner">
+            <div class="footer-content">
+              <div class="foot-left">
+                <ul class="foot-links">
+                  <li><a href="#">COMPANY POLICIES</a></li>
+                  <li><a href="#">NEED HELP</a></li>
+                  <li><a href="#">NEWSLETTER</a></li>
+                  <li><a href="#">OUR UNIVERSE</a></li>
+                </ul>
+                <p>
+                  © 2023, Officina Profumo Farmaceutica di Santa Maria Novella
+                  VAT IT00459370482 Company under coordination and control of
+                  Italmobiliare S.p.A.
+                </p>
+              </div>
+              <div class="foot-right">
+                <strong class="foot-logo"
+                  ><i class="hidden">SANTA MARIA NOVELLA</i></strong
+                >
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

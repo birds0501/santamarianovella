@@ -1,0 +1,527 @@
+@charset "utf-8";
+
+@import url("https://use.typekit.net/dbr6oga.css");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+
+:root {
+  --bg-color: #f9f6f3;
+  --nomal-h2-color: #222222;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font: 1rem/1.5 "futura-pt", sans-serif;
+  /* font: [font-size] / [line-height] [font-family]; */
+  background: var(--bg-color);
+  overflow-x: hidden;
+}
+
+h2 {
+  font: 1rem/1.5 "Cinzel", serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+hr,
+.hidden {
+  position: absolute;
+  margin: -1px;
+  width: -1px;
+  height: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+::selection {
+  background: #444;
+  color: var(--bg-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+.inner {
+  width: 175.6rem;
+  margin: 0 auto;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#scroll-container {
+  height: 100vh;
+  /* overflow: hidden; */
+  box-sizing: content-box;
+}
+
+/* =========================================================== */
+/* #header, 헤더영역 */
+
+#header {
+  width: 100%;
+  position: fixed;
+  top: 2rem;
+  right: 0;
+  z-index: 10;
+  transition: all 0.8s ease;
+}
+
+#header.colored .logo a {
+  background-image: url(../img/SMN-logo-w-t.png);
+}
+
+#header.colored .search,
+#header.colored .cart,
+#header.colored .menu p {
+  color: #fbfbfb;
+}
+
+#header.colored .menu-line {
+  background: #fbfbfb;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  height: 7rem;
+  position: relative;
+  z-index: 20;
+}
+
+.logo a {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  background: url(../img/SMN-logo-t.png) no-repeat 50% / contain;
+}
+
+.gnb {
+  display: flex;
+  gap: 3.2rem;
+  margin-top: 1rem;
+}
+
+.search {
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  color: #222;
+  font-weight: 400;
+}
+.cart {
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  color: #222;
+  font-weight: 400;
+}
+
+.menu {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.menu-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.menu-button:hover .menu-line.line2 {
+  width: 24px;
+}
+
+.menu-line {
+  display: block;
+  background: #222;
+  height: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center center;
+  position: absolute;
+  top: 50%;
+}
+
+.menu-line.line1 {
+  transform: translateY(-4px);
+  width: 24px;
+}
+
+.menu-line.line2 {
+  transform: translateY(4px);
+  width: 14px;
+}
+
+/* active 상태 */
+.menu-button.active .menu-line.line1 {
+  animation: move-close-long 1s forwards;
+}
+
+.menu-button.active .menu-line.line2 {
+  animation: move-close-short 1s forwards;
+}
+
+.menu-button:not(.active) .menu-line.line1 {
+  animation: move-open-long 0.8s forwards;
+}
+
+.menu-button:not(.active) .menu-line.line2 {
+  animation: move-open-short 0.8s forwards;
+}
+
+@keyframes move-close-long {
+  0% {
+    transform: translateY(-4px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+@keyframes move-close-short {
+  0% {
+    transform: translateY(4px) rotate(0deg);
+    width: 24px;
+  }
+  25% {
+    transform: translateY(0) rotate(0deg);
+    width: 24px;
+  }
+  100% {
+    transform: translateY(0) rotate(45deg);
+    width: 24px;
+  }
+}
+
+@keyframes move-open-long {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-4px) rotate(0deg);
+  }
+}
+
+@keyframes move-open-short {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    width: 24px;
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+    width: 24px;
+  }
+  100% {
+    transform: translateY(4px) rotate(0deg);
+    width: 14px;
+  }
+}
+
+/* =========================================================== */
+/* .menu, 메뉴영역*/
+.fade-out-wrapper {
+  opacity: 1;
+}
+
+.menu-open {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-color);
+  z-index: 15;
+  opacity: 0;
+  visibility: hidden;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 17rem 7rem 0 8rem;
+}
+
+.menu-list {
+  display: flex;
+  gap: 8rem;
+}
+
+.all-products,
+.our-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+  margin-left: 1rem;
+}
+
+.all-products li,
+.our-icons li {
+  font-size: 2rem;
+  color: rgba(2, 2, 2, 0.6);
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.all-products li:hover,
+.our-icons li:hover {
+  color: #222;
+}
+
+.all-products li span,
+.our-icons li span,
+.sub-menu li span {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.all-products li span::after,
+.our-icons li span::after,
+.sub-menu li span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 0;
+  transition: width 0.4s ease;
+}
+
+.all-products li:first-child span::after,
+.our-icons li:first-child span::after,
+.sub-menu li span::after {
+  height: 2px;
+  background: rgba(2, 2, 2, 0.6);
+}
+
+.all-products li:not(:first-child) span::after,
+.our-icons li:not(:first-child) span::after {
+  height: 1px;
+  background: #222;
+}
+
+.all-products li:hover span::after,
+.our-icons li:hover span::after,
+.sub-menu li:hover span::after {
+  width: 100%;
+}
+
+.all-products li:first-child,
+.our-icons li:first-child,
+.sub-menu li {
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.sub-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.card-list {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.card-item a {
+  display: block;
+  width: 40rem;
+  height: 49rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-item a:hover .card-image img {
+  transform: scale(1.04);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+}
+
+.card-dim {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(2, 2, 2, 0.06) 0%,
+    rgba(2, 2, 2, 0) 17%,
+    rgba(2, 2, 2, 0) 50%,
+    rgba(2, 2, 2, 0.05) 60%,
+    rgba(2, 2, 2, 0.3) 79%,
+    rgba(2, 2, 2, 0.8) 100%
+  );
+}
+
+.card-dim::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(2, 2, 2, 0) 0%,
+    rgba(2, 2, 2, 0.6) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card-item a:hover .card-dim::after {
+  opacity: 1;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card-text {
+  position: absolute;
+  left: 8%;
+  bottom: 4%;
+  color: #fff;
+  font-family: "Cinzel", serif;
+}
+
+.card-text p {
+  font-size: 1.5rem;
+  line-height: 1;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 1px;
+}
+.card-text strong {
+  font-size: 2.6rem;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 2px 1px;
+}
+
+.menu-bottom {
+  display: flex;
+  padding: 0 0 6rem 0;
+  text-align: left;
+  gap: 3.2rem;
+}
+
+.menu-bottom li a {
+  font-size: 1.8rem;
+}
+
+.lang a {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.lang a::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url(../img/globe.png) no-repeat 50%;
+  margin-bottom: 0.1rem;
+}
+
+/* =========================================================== */
+/* #footer, 푸터영역 */
+
+#footer {
+  border-top: 1px solid #dedede;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rem 0 3rem;
+  align-items: end;
+}
+
+.foot-logo {
+  display: block;
+  width: 13rem;
+  height: 16rem;
+  background: url(../img/SMN-logo-foot.png) no-repeat 50%;
+  background-size: contain;
+}
+
+.foot-left p {
+  font-weight: 300;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  color: #767676;
+}
+
+.foot-links {
+  display: flex;
+  gap: 3rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.foot-links li {
+  position: relative;
+}
+
+.foot-links li:not(:last-child):after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -1.5rem;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 40%;
+  background: #8e8e8e;
+}
+
+.inner {
+  width: 175.6rem;
+  margin: 0 auto;
+  /* background: rgb(254, 198, 198); */
+}
+
+@media (max-width: 1800px) {
+  .inner {
+    width: 94%;
+  }
+}

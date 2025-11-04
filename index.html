@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SANTA MARIA NOVELLA</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="icon" href="./img/favicon.png" sizes="32x32" type="image/png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.7.5/dist/smooth-scrollbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.7.4/dist/plugins/overscroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+  </head>
+
+  <body class="page-main">
+    <!-- js 제어용 클래스(.page-main) -->
+    <a href="#container" class="skip hidden">본문 바로가기</a>
+    <header id="header">
+      <div class="inner">
+        <nav>
+          <h1 class="logo">
+            <a href="./index.html"
+              ><i class="hidden">SANTA MARIA NOVELLA</i>
+            </a>
+          </h1>
+          <div class="gnb">
+            <button type="button" class="search">SEARCH</button>
+            <button type="button" class="cart">CART (0)</button>
+            <div class="menu">
+              <button type="button" class="menu-button" aria-label="메뉴/검색">
+                <span class="menu-line line1"></span>
+                <span class="menu-line line2"></span>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="menu-open">
+        <div class="menu-content inner">
+          <div class="menu-list">
+            <ul class="all-products">
+              <li>
+                <span><a href="sub.html">All Products</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Fragrances</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Skincare</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Body & Hair</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Home</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Gifts</a></span>
+              </li>
+            </ul>
+            <ul class="our-icons">
+              <li>
+                <span><a href="sub.html">Our Icons</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">I Giardini Medicei</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Melograno</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Tabacco Toscano</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Angeli di Firenze</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Pot Pourri</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Fresia</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Rosa Gardenia</a></span>
+              </li>
+            </ul>
+            <ul class="sub-menu">
+              <li>
+                <span><a href="sub.html">Our Story</a></span>
+              </li>
+              <li>
+                <span><a href="sub.html">Boutiques</a></span>
+              </li>
+            </ul>
+          </div>
+          <ul class="card-list">
+            <li class="card-item">
+              <a href="#" class="item-link">
+                <div class="card-image">
+                  <img src="./img/card-item-img-01.jpg" alt="" />
+                  <div class="card-dim"></div>
+                </div>
+                <div class="card-text">
+                  <p>new</p>
+                  <strong>Carta d'armenia</strong>
+                </div>
+              </a>
+            </li>
+            <li class="card-item">
+              <a href="#" class="item-link">
+                <div class="card-image">
+                  <img src="./img/card-item-img-02.jpg" alt="" />
+                  <div class="card-dim"></div>
+                </div>
+                <div class="card-text">
+                  <p>new</p>
+                  <strong>Papers to Scent and Preserve Wool</strong>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <ul class="menu-bottom inner">
+          <li><a href="#">ACCOUNT</a></li>
+          <li class="lang"><a href="#">EN</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="custom-cursor"></div>
+    <div class="hover-image-wrap">
+      <img src="" alt="hover illustration" class="hover-image" />
+    </div>
+    <div id="scroll-container">
+      <!--Smooth Scrollbar -->
+      <div class="fade-out-wrapper">
+        <!-- .menu-open 페이드인, 아웃 제어용 -->
+        <main id="container">
+          <section class="visual">
+            <div class="swiper visual-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide slide1">
+                  <figure class="main-visual-img">
+                    <img
+                      src="./img/mv-shop.jpg"
+                      alt="Bizzarria Eau de Parfum image"
+                    />
+                  </figure>
+                  <div class="dim"></div>
+                  <div class="main-visual-title">
+                    <a href="#">
+                      <h2>The magical place where it all started</h2>
+                      <p>
+                        Looking up at Officina Profumo-Farmaceutica di Santa
+                        Maria Novella, Florence.
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide slide2">
+                  <figure class="main-visual-img">
+                    <img src="./img/mv-idralia.jpg" alt="Idralia line image" />
+                  </figure>
+                  <div class="dim"></div>
+                  <div class="main-visual-title">
+                    <a href="#">
+                      <h2>The precious wisdom of the Idralia line:</h2>
+                      <p>
+                        Discover the six iconic formulations of Officina
+                        Profumo-Farmaceutica di Santa Maria Novella.
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide slide3">
+                  <video
+                    class="main-visual-video"
+                    autoplay
+                    muted
+                    loop
+                    preload="metadata"
+                    playsinline
+                  >
+                    <source src="./video/main-visual.mp4" type="video/mp4" />
+                  </video>
+                  <div class="dim"></div>
+                  <div class="main-visual-title">
+                    <a href="#">
+                      <h2>
+                        Acqua di Rose’s legend is <br />
+                        rooted in the dawn of time:
+                      </h2>
+                      <p>
+                        Discover a moment of grace, a delicate echo of
+                        Florence’s gardens.
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </section>
+          <section class="about">
+            <h2 class="hidden">ABOUT</h2>
+            <video class="about-video" autoplay muted loop playsinline>
+              <source src="./video/about-3.mp4" type="video/mp4" />
+            </video>
+            <div class="about-dim"></div>
+            <div class="inner">
+              <div class="about-text">
+                <div class="about-title">
+                  <strong class="top-title">about 8oo</strong>
+                  <div class="bottom-title">
+                    <strong><span class="deco-y">Y</span>ears</strong>
+                    <strong class="deco-of"> of </strong>
+                    <div class="space"></div>
+                    <strong>Heritage</strong>
+                  </div>
+                </div>
+                <div class="end-con-wrap">
+                  <p>
+                    Florence is a living city, constantly in motion and filled
+                    with sounds. <br />
+                    These sensations suddenly change upon entering the
+                    <span> historic boutique </span> of Officina
+                    Profumo-Farmaceutica di Santa Maria Novella, <br />
+                    located at 16 Via della Scala. External noises soften, and
+                    the air becomes permeated with a
+                    <span>thousand scents.</span>
+                    <br />
+                    Here, time begins to flow backwards, up to
+                    <span>the year 1221</span>.
+                  </p>
+                  <a href="#" class="about-more-icon"> discover </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="scent">
+            <h2 class="scent-title">DISCOVER YOUR OWN SCENT</h2>
+            <div class="scent-title-path">
+              <svg
+                class="scent-title-path-l"
+                width="961"
+                height="76"
+                viewBox="0 0 961 76"
+                preserveAspectRatio="none"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 3.01014C73.62 3.01014 945.07 -15.8799 904.93 49.9301C886.16 80.7101 960.14 62.4201 960 75.9701"
+                  stroke="#333"
+                  stroke-miterlimit="10"
+                />
+              </svg>
+              <svg
+                class="scent-title-path-r"
+                width="961"
+                height="76"
+                viewBox="0 0 961 76"
+                preserveAspectRatio="none"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 3.01014C73.62 3.01014 945.07 -15.8799 904.93 49.9301C886.16 80.7101 960.14 62.4201 960 75.9701"
+                  stroke="#333"
+                  stroke-miterlimit="10"
+                />
+              </svg>
+            </div>
+            <div class="circle-con">
+              <div class="circle-container" id="circleBg">
+                <!-- SVG 원 경로 -->
+                <svg
+                  class="circle-svg"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 100 100"
+                  style="position: absolute; top: 0; left: 0; overflow: visible"
+                >
+                  <circle
+                    id="circlePath"
+                    cx="50"
+                    cy="50"
+                    r="50"
+                    fill="none"
+                    stroke="transparent
+                    "
+                    stroke-width="0.2"
+                  />
+                </svg>
+                <!-- 원 회전하는 아이템들 -->
+                <div class="circle-items">
+                  <a href="#" class="circle-item">
+                    <img src="./img/scent-item-01.png" alt="" />
+                    <p>
+                      Hesperidic - <br />
+                      Floral - <br />
+                      Fruity
+                    </p>
+                  </a>
+                  <a href="#" class="circle-item">
+                    <img src="./img/scent-item-02.png" alt="" />
+                    <p>
+                      Floral - <br />
+                      Aquatic
+                    </p>
+                  </a>
+                  <a href="#" class="circle-item">
+                    <img src="./img/scent-item-03.png" alt="" />
+                    <p>
+                      Floral - <br />
+                      Fruity - <br />
+                      Ambery
+                    </p>
+                  </a>
+                  <a href="#" class="circle-item">
+                    <img src="./img/scent-item-04.png" alt="" />
+                    <p>
+                      Floral - <br />
+                      Musky
+                    </p>
+                  </a>
+                  <a href="#" class="circle-item">
+                    <img src="./img/scent-item-05.png" alt="" />
+                    <p>
+                      Warm - <br />
+                      Woody - <br />
+                      Oriental
+                    </p>
+                  </a>
+                  <a href="#" class="circle-item">
+                    <img src="./img/scent-item-06.png" alt="" />
+                    <p>
+                      Aromatic - <br />
+                      Green - <br />
+                      Woody
+                    </p>
+                  </a>
+                  <a href="#" class="circle-item">
+                    <img src="./img/scent-item-07.png" alt="" />
+                    <p>
+                      Green - <br />
+                      Floral - <br />
+                      Poudré
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="scent-dim"></div>
+          </section>
+          <section class="best" data-cursor-text="HOVER ITEMS">
+            <div class="inner">
+              <div class="best-text">
+                <h2>OUR BEST SELLERS</h2>
+                <ul class="best-list">
+                  <li class="active">
+                    <button type="button">All Products</button>
+                  </li>
+                  <li><button type="button">Fragrances</button></li>
+                  <li><button type="button">Skincare</button></li>
+                  <li><button type="button">Body &amp; Hair</button></li>
+                  <li><button type="button">Gift Sets</button></li>
+                  <li><button type="button">For Home</button></li>
+                </ul>
+              </div>
+              <div class="best-wrap">
+                <ul class="best-items left-side">
+                  <li class="best-item">
+                    <a href="#">
+                      <img src="./img/best-swiper1-item01.png" alt="acqua" />
+                      <div class="item-info">
+                        <strong>ACQUA</strong>
+                        <p>€240</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="best-item">
+                    <a href="#">
+                      <img
+                        src="./img/best-swiper1-item04.png"
+                        alt="Idralia Face Cream"
+                      />
+                      <div class="item-info">
+                        <strong>IDRALIA FACE CREAM</strong>
+                        <p>€75</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="best-item">
+                    <a href="#">
+                      <img
+                        src="./img/best-swiper1-item03.png"
+                        alt="Melograno in Scented Terracotta"
+                      />
+                      <div class="item-info">
+                        <strong>MELOGRANO IN SCENTED TERRACOTTA</strong>
+                        <p>€70</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="best-item">
+                    <a href="#">
+                      <img
+                        src="./img/best-swiper1-item02.png"
+                        alt="Before and After Shave Cream"
+                      />
+                      <div class="item-info">
+                        <strong>BEFORE AND AFTER SHAVE CREAM</strong>
+                        <p>€36</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="best-items right-side">
+                  <li class="best-item">
+                    <a href="#">
+                      <img src="./img/best-swiper2-item01.png" alt="AMBRA" />
+                      <div class="item-info">
+                        <strong>AMBRA</strong>
+                        <p>€240</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="best-item">
+                    <a href="#">
+                      <img
+                        src="./img/best-swiper2-item02.png"
+                        alt="POT POURRI BAG"
+                      />
+                      <div class="item-info">
+                        <strong>POT POURRI BAG</strong>
+                        <p>€24</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="best-item">
+                    <a href="#">
+                      <img src="./img/best-swiper2-item03.png" alt="L'Iris" />
+                      <div class="item-info">
+                        <strong>L'Iris</strong>
+                        <p>€240</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="best-item">
+                    <a href="#">
+                      <img
+                        src="./img/best-swiper2-item04.png"
+                        alt="Acqua di Rose"
+                      />
+                      <div class="item-info">
+                        <strong>Acqua di Rose</strong>
+                        <p>€35</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="iconics">
+            <h2 class="hidden">ICONICS</h2>
+            <div class="swiper iconic-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide slide1">
+                  <div class="slide-bg">
+                    <img src="./img/iconics-bg-01.jpg" alt="fresia-bg" />
+                  </div>
+                  <div class="slide-content">
+                    <div class="iconic-dim"></div>
+                    <div class="iconic-pn-dim"></div>
+                    <div class="slide-title">
+                      <img src="./img/fresia.svg" alt="" />
+                    </div>
+                    <div class="slide-item">
+                      <img
+                        src="./img/iconics-item-01.png"
+                        alt="fresia-fregrance"
+                      />
+                    </div>
+                    <a href="#" class="iconic-more-icon"
+                      ><i class="hidden">more</i></a
+                    >
+                  </div>
+                </div>
+                <div class="swiper-slide slide2">
+                  <div class="slide-bg">
+                    <img src="./img/iconics-bg-02.jpg" alt="rosa-gardenia-bg" />
+                  </div>
+                  <div class="slide-content">
+                    <div class="iconic-dim"></div>
+                    <div class="iconic-pn-dim"></div>
+                    <div class="slide-title">
+                      <img src="./img/rosa-gardenia.svg" alt="" />
+                    </div>
+                    <div class="slide-item">
+                      <img
+                        src="./img/iconics-item-02.png"
+                        alt="rosa-gardenia fregrance"
+                      />
+                    </div>
+                    <a href="#" class="iconic-more-icon"
+                      ><i class="hidden">more</i></a
+                    >
+                  </div>
+                </div>
+                <div class="swiper-slide slide3">
+                  <div class="slide-bg">
+                    <img src="./img/iconics-bg-03.jpg" alt="potpourri-bg" />
+                  </div>
+                  <div class="slide-content">
+                    <div class="iconic-dim"></div>
+                    <div class="iconic-pn-dim"></div>
+                    <div class="slide-title">
+                      <img src="./img/potpourri.svg" alt="" />
+                    </div>
+                    <div class="slide-item">
+                      <img
+                        src="./img/iconics-item-03.png"
+                        alt="potpourri-fregrance"
+                      />
+                    </div>
+                    <a href="#" class="iconic-more-icon"
+                      ><i class="hidden">more</i></a
+                    >
+                  </div>
+                </div>
+                <div class="swiper-slide slide4">
+                  <div class="slide-bg">
+                    <img
+                      src="./img/iconics-bg-04.jpg"
+                      alt="tabaco-toscano-bg"
+                    />
+                  </div>
+                  <div class="slide-content">
+                    <div class="iconic-dim"></div>
+                    <div class="iconic-pn-dim"></div>
+                    <div class="slide-title">
+                      <img src="./img/tabaco-toscano.svg" alt="" />
+                    </div>
+                    <div class="slide-item">
+                      <img
+                        src="./img/iconics-item-04.png"
+                        alt="tabaco-toscano-fregrance"
+                      />
+                    </div>
+                    <a href="#" class="iconic-more-icon"
+                      ><i class="hidden">more</i></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </section>
+          <section class="boutiques" data-cursor-text="HOVER TEXTS">
+            <div class="boutiques-title">
+              <span class="the">The</span>
+              <h2>
+                <span class="capital">F</span>ragrant
+                <span class="capital">J</span>ourney
+              </h2>
+              <p>
+                <span class="sub-capital">D</span>iscover our boutiques along
+                your journey, <br />
+                and explore the timeless elegance and captivating scents <br />
+                that inspire every corner of our native cities.
+              </p>
+            </div>
+            <div class="boutiques-location inner">
+              <ul class="location-box">
+                <li class="hover-text">
+                  <a href="#" data-img="./img/boutique-01.jpg">roma</a>
+                </li>
+                <li class="hover-text">
+                  <a href="#" data-img="./img/boutique-02.jpg">new york</a>
+                </li>
+                <li class="hover-text">
+                  <a href="#" data-img="./img/boutique-03.jpg">firenze</a>
+                </li>
+                <li class="hover-text">
+                  <a href="#" data-img="./img/boutique-04.jpg">venezia</a>
+                </li>
+                <li class="hover-text">
+                  <a href="#" data-img="./img/boutique-05.jpg">london</a>
+                </li>
+                <li class="hover-text">
+                  <a href="#" data-img="./img/boutique-07.jpg">los angeles</a>
+                </li>
+                <li class="hover-text">
+                  <a href="#" data-img="./img/boutique-06.jpg">paris</a>
+                </li>
+              </ul>
+              <!-- 이미지 데이터 담을 요소는 헤더 아래에 -->
+            </div>
+          </section>
+          <section class="subscribe">
+            <div class="subscribe-bg">
+              <img src="./img/subscribe-bg.jpg" alt="background-image" />
+            </div>
+            <div class="subscribe-dim"></div>
+            <div class="inner">
+              <div class="subscribe-title">
+                <h2>
+                  DISCOVER <br />
+                  OUR WORLD <br />
+                  OF WONDER
+                </h2>
+                <p>
+                  Subscribe to our newsletters <br />
+                  to get notified about new product launches, <br />
+                  special offers, company news and events.
+                </p>
+              </div>
+              <form class="email-form">
+                <div class="input-group">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+                  />
+                  <button type="submit" class="submit-icon">
+                    <i class="hidden">submit-icon</i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </main>
+        <footer id="footer">
+          <div class="inner">
+            <div class="footer-content">
+              <div class="foot-left">
+                <ul class="foot-links">
+                  <li><a href="#">COMPANY POLICIES</a></li>
+                  <li><a href="#">NEED HELP</a></li>
+                  <li><a href="#">NEWSLETTER</a></li>
+                  <li><a href="#">OUR UNIVERSE</a></li>
+                </ul>
+                <p>
+                  © 2023, Officina Profumo Farmaceutica di Santa Maria Novella
+                  VAT IT00459370482 Company under coordination and control of
+                  Italmobiliare S.p.A.
+                </p>
+              </div>
+              <div class="foot-right">
+                <strong class="foot-logo"
+                  ><i class="hidden">SANTA MARIA NOVELLA</i></strong
+                >
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
