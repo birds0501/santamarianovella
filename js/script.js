@@ -15,9 +15,15 @@ $(function () {
       overscroll: {
         effect: "glow",
         damping: 0.07,
-        maxOverscroll: 100,
+        maxOverscroll: 150,
         glowColor: "#e7e0d7ff",
       },
+      // overscroll: {
+      //   effect: "bounce",
+      //   damping: 0.05,
+      //   maxOverscroll: 70,
+      //   glowColor: "#e7e0d7ff",
+      // },
     },
   });
 
@@ -689,6 +695,25 @@ $(function () {
     //.boutiques
     // ====================================================================
 
+    // ✅ 이미지 미리 불러오기
+    window.addEventListener("load", () => {
+      const images = [
+        "./img/boutique-01.jpg",
+        "./img/boutique-02.jpg",
+        "./img/boutique-03.jpg",
+        "./img/boutique-04.jpg",
+        "./img/boutique-05.jpg",
+        "./img/boutique-06.jpg",
+        "./img/boutique-07.jpg",
+      ];
+
+      images.forEach((src) => {
+        const img = new Image();
+        img.src = src; // 브라우저 캐시에 저장
+      });
+    });
+
+    // ✅ 기존 코드 (구조 그대로 유지)
     const hoverImageWrap = document.querySelector(".hover-image-wrap");
     const hoverImage = document.querySelector(".hover-image");
     const bItems = document.querySelectorAll(".hover-text a");

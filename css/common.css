@@ -520,8 +520,52 @@ nav {
   /* background: rgb(254, 198, 198); */
 }
 
+/* 작은 pc해상도에서 크게 깨지는것만 수정 */
 @media (max-width: 1800px) {
   .inner {
     width: 94%;
+  }
+
+  .card-item a {
+    width: 31rem;
+    height: 40rem;
+  }
+
+  .all-products li:first-child,
+  .our-icons li:first-child,
+  .sub-menu li {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+  }
+  .all-products li,
+  .our-icons li {
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+
+  .all-products li:first-child span::after,
+  .our-icons li:first-child span::after,
+  .sub-menu li span::after {
+    height: 1.6px;
+  }
+
+  .menu-content {
+    padding: 15rem 7rem 0px 8rem;
+  }
+
+  .menu-bottom li a {
+    font-size: 1.5rem;
+  }
+
+  .card-text strong {
+    font-size: 2.4rem;
+  }
+
+  .about-text {
+    margin-top: 10rem;
+  }
+
+  .about-text p {
+    font-size: 1.6rem;
   }
 }
