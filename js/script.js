@@ -885,6 +885,29 @@ $(function () {
         });
       });
     });
+    // ----------------------
+    // 메뉴 상태 감시 → 커서 제어
+    // ----------------------
+
+    const observerMenu = new MutationObserver(() => {
+      const menuOpened = document.body.classList.contains("menu-opened");
+
+      if (menuOpened && inSection) {
+        cursor.classList.remove("active");
+        document.body.style.cursor = "auto"; // 메뉴 열리면 기본 커서
+      }
+
+      if (!menuOpened && inSection && !hoveringItem) {
+        cursor.classList.add("active");
+        document.body.style.cursor = "none"; // 메뉴 닫히면 다시 커스텀 커서
+      }
+    });
+
+    // body의 class 변화 감시 (menu-opened)
+    observerMenu.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
     // 메인 끝
   }
