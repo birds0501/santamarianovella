@@ -281,9 +281,9 @@
 
 .circle-container {
   position: absolute;
-  bottom: -50%;
+  top: 53%;
   left: 50%;
-  transform: translate(-50%, 38%);
+  transform: translate(-50%, 0%);
   width: 70vw;
   aspect-ratio: 1/1;
 }
@@ -376,7 +376,7 @@
 
 .best-text {
   height: 100vh;
-  margin: 8rem 0 0;
+  margin: 9rem 0 0;
   display: flex;
   flex-direction: column;
   align-items: end;
