@@ -63,10 +63,12 @@
   font-style: italic;
   font-weight: 300;
   text-align: center;
+  color: #333;
 }
 
 .bold {
   font-weight: 400;
+  color: #222;
 }
 /* =========================================================== */
 /* .filter-container*/
@@ -118,7 +120,9 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
@@ -380,12 +384,13 @@
 .ad-text p {
   font-weight: 300;
   font-size: 2.2rem;
-  color: #111;
+  color: #333;
   margin-top: 2.5rem;
 }
 
 .bold-ad {
   font-weight: 400;
+  color: #222;
 }
 
 .view-more-ad {
@@ -401,7 +406,9 @@
   font-family: "Cinzel", serif;
   font-size: 2.3rem;
   opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 
 /* 텍스트 등장 */
@@ -424,7 +431,9 @@
 
 /* 화살표 기본 */
 .ad-arr {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   pointer-events: none;
   transform: translateX(0);
   opacity: 1;
