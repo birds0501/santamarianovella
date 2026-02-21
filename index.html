@@ -213,7 +213,22 @@
           <section class="about">
             <h2 class="hidden">ABOUT</h2>
             <video
+              id="video-preload"
+              src="./video/about-3.mp4"
+              preload="auto"
+              muted
+              playsinline
+              style="
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                opacity: 0;
+                pointer-events: none;
+              "
+            ></video>
+            <video
               class="about-video"
+              src="./video/about-3.mp4"
               autoplay
               muted
               loop

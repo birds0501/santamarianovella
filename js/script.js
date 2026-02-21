@@ -259,85 +259,68 @@ $(function () {
     //.about scrolltrigger
     // =========================================================================
 
+    gsap.registerPlugin(ScrollTrigger);
+
+    let hasAnimated = false;
     const video = document.querySelector(".about-video");
+    const aboutDim = document.querySelector(".about-dim");
+    const aboutMorePath = document.querySelector(".about-more-icon");
+    const texts = document.querySelectorAll(
+      ".about h2, .about strong,.about p",
+    );
 
-    // 1️⃣ src를 JS에서 주입
-    video.src = "./video/about-3.mp4";
-
-    // 2️⃣ 강제 로드 시작
-    video.load();
-
-    // 3️⃣ 영상 준비되면 ScrollTrigger 생성
-    video.addEventListener("loadeddata", function () {
-      initScroll();
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".about",
+        scroller: "#scroll-container",
+        start: "bottom bottom",
+        end: "+=380%",
+        pin: true,
+      },
     });
 
-    function initScroll() {
-      gsap.registerPlugin(ScrollTrigger);
-
-      // gsap.registerPlugin(ScrollTrigger);
-
-      let hasAnimated = false;
-      const video = document.querySelector(".about-video");
-      const aboutDim = document.querySelector(".about-dim");
-      const aboutMorePath = document.querySelector(".about-more-icon");
-      const texts = document.querySelectorAll(
-        ".about h2, .about strong,.about p",
-      );
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".about",
-          scroller: "#scroll-container",
-          start: "bottom bottom",
-          end: "+=380%",
-          pin: true,
+    tl.to({}, { duration: 0.6 })
+      .to(
+        video,
+        {
+          width: "100vw",
+          height: "100vh",
+          filter: "grayscale(0%)",
+          duration: 1,
+          ease: "power2.out",
         },
-      });
+        ">",
+      )
 
-      tl.to({}, { duration: 0.6 })
-        .to(
-          video,
-          {
-            width: "100vw",
-            height: "100vh",
-            filter: "grayscale(0%)",
-            duration: 1,
-            ease: "power2.out",
-          },
-          ">",
-        )
-
-        .to(
-          aboutDim,
-          {
-            width: "100vw",
-            height: "100vh",
-            duration: 1,
-            ease: "power2.out",
-          },
-          "<",
-        )
-        .to(
-          texts,
-          {
-            color: "#f9f6f3",
-            duration: 0.8,
-            ease: "power2.out",
-          },
-          "<",
-        )
-        .to(
-          aboutMorePath,
-          {
-            opacity: 1,
-            duration: 0.9,
-            ease: "power2.out",
-          },
-          "<=+0.2",
-        )
-        .to({}, { duration: 0.6 }, ">");
-    }
+      .to(
+        aboutDim,
+        {
+          width: "100vw",
+          height: "100vh",
+          duration: 1,
+          ease: "power2.out",
+        },
+        "<",
+      )
+      .to(
+        texts,
+        {
+          color: "#f9f6f3",
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "<",
+      )
+      .to(
+        aboutMorePath,
+        {
+          opacity: 1,
+          duration: 0.9,
+          ease: "power2.out",
+        },
+        "<=+0.2",
+      )
+      .to({}, { duration: 0.6 }, ">");
 
     // ===========================================================
     //.scent circle-con
