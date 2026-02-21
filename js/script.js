@@ -101,7 +101,7 @@ $(function () {
       menuOpen,
       { opacity: 0, visibility: "hidden" },
       { opacity: 1, visibility: "visible", duration: 0.6 },
-      "<0.1"
+      "<0.1",
     );
 
   //메뉴 닫힐 때 (reverse 시)
@@ -163,7 +163,7 @@ $(function () {
   $(function () {
     const header = document.querySelector("#header");
     const targetSections = document.querySelectorAll(
-      ".visual, .about, .iconics, .subscribe"
+      ".visual, .about, .iconics, .subscribe",
     );
     const menuButton = document.querySelector(".menu-button");
     const menu = document.querySelector(".menu");
@@ -184,7 +184,7 @@ $(function () {
             header.classList.remove("colored");
           }
         },
-        { threshold: 0.5 }
+        { threshold: 0.5 },
       );
 
       targetSections.forEach((section) => observer.observe(section));
@@ -259,68 +259,85 @@ $(function () {
     //.about scrolltrigger
     // =========================================================================
 
-    gsap.registerPlugin(ScrollTrigger);
-
-    let hasAnimated = false;
     const video = document.querySelector(".about-video");
-    const aboutDim = document.querySelector(".about-dim");
-    const aboutMorePath = document.querySelector(".about-more-icon");
-    const texts = document.querySelectorAll(
-      ".about h2, .about strong,.about p"
-    );
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about",
-        scroller: "#scroll-container",
-        start: "bottom bottom",
-        end: "+=380%",
-        pin: true,
-      },
+    // 1️⃣ src를 JS에서 주입
+    video.src = "./video/about-3.mp4";
+
+    // 2️⃣ 강제 로드 시작
+    video.load();
+
+    // 3️⃣ 영상 준비되면 ScrollTrigger 생성
+    video.addEventListener("loadeddata", function () {
+      initScroll();
     });
 
-    tl.to({}, { duration: 0.6 })
-      .to(
-        video,
-        {
-          width: "100vw",
-          height: "100vh",
-          filter: "grayscale(0%)",
-          duration: 1,
-          ease: "power2.out",
-        },
-        ">"
-      )
+    function initScroll() {
+      gsap.registerPlugin(ScrollTrigger);
 
-      .to(
-        aboutDim,
-        {
-          width: "100vw",
-          height: "100vh",
-          duration: 1,
-          ease: "power2.out",
+      // gsap.registerPlugin(ScrollTrigger);
+
+      let hasAnimated = false;
+      const video = document.querySelector(".about-video");
+      const aboutDim = document.querySelector(".about-dim");
+      const aboutMorePath = document.querySelector(".about-more-icon");
+      const texts = document.querySelectorAll(
+        ".about h2, .about strong,.about p",
+      );
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".about",
+          scroller: "#scroll-container",
+          start: "bottom bottom",
+          end: "+=380%",
+          pin: true,
         },
-        "<"
-      )
-      .to(
-        texts,
-        {
-          color: "#f9f6f3",
-          duration: 0.8,
-          ease: "power2.out",
-        },
-        "<"
-      )
-      .to(
-        aboutMorePath,
-        {
-          opacity: 1,
-          duration: 0.9,
-          ease: "power2.out",
-        },
-        "<=+0.2"
-      )
-      .to({}, { duration: 0.6 }, ">");
+      });
+
+      tl.to({}, { duration: 0.6 })
+        .to(
+          video,
+          {
+            width: "100vw",
+            height: "100vh",
+            filter: "grayscale(0%)",
+            duration: 1,
+            ease: "power2.out",
+          },
+          ">",
+        )
+
+        .to(
+          aboutDim,
+          {
+            width: "100vw",
+            height: "100vh",
+            duration: 1,
+            ease: "power2.out",
+          },
+          "<",
+        )
+        .to(
+          texts,
+          {
+            color: "#f9f6f3",
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "<",
+        )
+        .to(
+          aboutMorePath,
+          {
+            opacity: 1,
+            duration: 0.9,
+            ease: "power2.out",
+          },
+          "<=+0.2",
+        )
+        .to({}, { duration: 0.6 }, ">");
+    }
 
     // ===========================================================
     //.scent circle-con
@@ -402,7 +419,7 @@ $(function () {
           opacity: 1,
           ease: "power3.out",
         },
-        0
+        0,
       );
     });
 
@@ -468,7 +485,7 @@ $(function () {
             rotateTween.lastTopItem = currentTopItem;
           }
         },
-      }
+      },
     );
 
     // 메인 타임라인에 회전 추가
@@ -524,14 +541,14 @@ $(function () {
     slideTl.fromTo(
       bestTitle,
       { opacity: 0, x: -30 },
-      { opacity: 1, x: 0, duration: 0.1, ease: "power2.out" }
+      { opacity: 1, x: 0, duration: 0.1, ease: "power2.out" },
     );
 
     slideTl.fromTo(
       bestList,
       { opacity: 0 },
       { opacity: 1, duration: 0.1, ease: "power2.out" },
-      "<"
+      "<",
     );
 
     // 왼쪽 슬라이드
@@ -539,7 +556,7 @@ $(function () {
       leftSlide,
       { yPercent: -80 },
       { yPercent: 110, duration: 2, ease: "power1.out" },
-      ">"
+      ">",
     );
 
     // 오른쪽 슬라이드
@@ -547,7 +564,7 @@ $(function () {
       rightSlide,
       { yPercent: 80 },
       { yPercent: -100, duration: 2, ease: "power1.out" },
-      "<"
+      "<",
     );
 
     // =======================================================================
@@ -616,14 +633,14 @@ $(function () {
     iconicSwiper.pagination.el.addEventListener("click", (e) => {
       const bullets = Array.from(iconicSwiper.pagination.bullets);
       const targetBullet = e.target.closest(
-        ".iconic-swiper .swiper-pagination-bullet"
+        ".iconic-swiper .swiper-pagination-bullet",
       );
       const index = bullets.indexOf(targetBullet);
 
       if (index >= 0) {
         // 클릭한 것만 active, 나머지는 자동으로 제거
         bullets.forEach((b, i) =>
-          b.classList.toggle("swiper-pagination-bullet-active", i === index)
+          b.classList.toggle("swiper-pagination-bullet-active", i === index),
         );
 
         // 스크롤 위치 연동
@@ -643,7 +660,7 @@ $(function () {
     //pagination active 업데이트
     function updatePagination(index) {
       iconicSwiper.pagination.bullets.forEach((b, i) =>
-        b.classList.toggle("swiper-pagination-bullet-active", i === index)
+        b.classList.toggle("swiper-pagination-bullet-active", i === index),
       );
     }
 
@@ -677,7 +694,7 @@ $(function () {
     function resetSlides() {
       iconicSwiper.slides.forEach((slide) => {
         const targets = slide.querySelectorAll(
-          ".slide-item, .iconic-more-icon"
+          ".slide-item, .iconic-more-icon",
         );
 
         // 진행 중인 애니메이션 종료
@@ -775,31 +792,31 @@ $(function () {
       .fromTo(
         ".subscribe-bg img",
         { scale: 1 },
-        { scale: 1.06, duration: 0.8, delay: 0.2, ease: "power2.out" }
+        { scale: 1.06, duration: 0.8, delay: 0.2, ease: "power2.out" },
       )
       .fromTo(
         ".subscribe-dim",
         { scale: 1 },
         { scale: 1.06, duration: 0.8, delay: 0.2, ease: "power2.out" },
-        "<"
+        "<",
       )
       .fromTo(
         ".subscribe-title h2",
         { opacity: 0, x: -10 },
         { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" },
-        "<+=0.2"
+        "<+=0.2",
       )
       .fromTo(
         ".subscribe-title p",
         { opacity: 0, x: -10 },
         { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" },
-        "<"
+        "<",
       )
       .fromTo(
         ".email-form",
         { opacity: 0 },
         { opacity: 1, duration: 0.8, ease: "power3.out" },
-        ">"
+        ">",
       );
 
     // =====================================================================
@@ -863,7 +880,7 @@ $(function () {
             }
           });
         },
-        { threshold: 0.1 }
+        { threshold: 0.1 },
       );
 
       observer.observe(section.el);
@@ -983,14 +1000,14 @@ $(function () {
       ".sub-ad-con .ad-img",
       { opacity: 0, scale: 1.02 },
       { opacity: 1, scale: 1, duration: 2, ease: "power3.out" },
-      0
+      0,
     );
 
     adTimeline.fromTo(
       ".sub-ad-con .ad-info",
       { opacity: 0, x: -50 },
       { opacity: 1, x: 0, duration: 1, ease: "power3.out" },
-      0.4
+      0.4,
     );
 
     gsap.registerPlugin(ScrollTrigger);
@@ -1017,7 +1034,7 @@ $(function () {
               start: "top 85%",
               toggleActions: "play none none none",
             },
-          }
+          },
         );
       });
 
@@ -1035,7 +1052,7 @@ $(function () {
             start: "top 85%",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
     }
 
