@@ -109,6 +109,7 @@ nav {
   justify-content: space-between;
   align-items: start;
   height: 7rem;
+  padding: 0 8.2rem;
   position: relative;
   z-index: 20;
 }
@@ -130,13 +131,14 @@ nav {
   font-size: 1.8rem;
   transition: all 0.3s ease;
   color: #222;
-  font-weight: 400;
+  font-weight: 300;
 }
+
 .cart {
   font-size: 1.8rem;
   transition: all 0.3s ease;
   color: #222;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .menu {
