@@ -109,7 +109,7 @@ nav {
   justify-content: space-between;
   align-items: start;
   height: 7rem;
-  padding: 0 8.2rem;
+  /* padding: 0 8.2rem; */
   position: relative;
   z-index: 20;
 }
