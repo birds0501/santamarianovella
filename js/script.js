@@ -18,12 +18,6 @@ $(function () {
         maxOverscroll: 150,
         glowColor: "#e7e0d7ff",
       },
-      // overscroll: {
-      //   effect: "bounce",
-      //   damping: 0.05,
-      //   maxOverscroll: 70,
-      //   glowColor: "#e7e0d7ff",
-      // },
     },
   });
 
@@ -239,7 +233,7 @@ $(function () {
     //.visual swiper
     // =========================================================================
 
-    const delay = 4000; // 슬라이드 시간(ms)
+    const delay = 4000;
 
     const swiper = new Swiper(".visual-swiper", {
       pagination: {
@@ -276,7 +270,6 @@ $(function () {
         start: "bottom bottom",
         end: "+=380%",
         pin: true,
-        // [핵심 추가] 스크롤이 트리거 영역에 들어오면 재생, 벗어나면 일시정지!
         onEnter: () => video.play(),
         onLeave: () => video.pause(),
         onEnterBack: () => video.play(),
@@ -326,17 +319,15 @@ $(function () {
       )
       .to({}, { duration: 0.6 }, ">");
 
-    // 애니메이션용 타임라인(tl) 코드 아래에 추가하세요.
-
+    //영상 미리 준비
     ScrollTrigger.create({
       trigger: ".about",
       scroller: "#scroll-container",
-      start: "top 300%", // 섹션이 화면에 보이기 훨씬 전(화면 3개 높이 전)에 도달하면 실행
+      start: "top 300%",
       onEnter: () => {
-        // 사용자가 근처에 다가오면 몰래 전체 다운로드 시작
         video.preload = "auto";
       },
-      once: true, // 다운로드는 한 번만 실행되도록 설정
+      once: true,
     });
     // ===========================================================
     //.scent circle-con
@@ -711,7 +702,7 @@ $(function () {
     //.boutiques
     // ====================================================================
 
-    // ✅ 이미지 미리 불러오기
+    // 이미지 미리 불러오기
     window.addEventListener("load", () => {
       const images = [
         "./img/boutique-01.jpg",
@@ -729,7 +720,7 @@ $(function () {
       });
     });
 
-    // ✅ 기존 코드 (구조 그대로 유지)
+    // 기존 코드 (구조 그대로 유지)
     const hoverImageWrap = document.querySelector(".hover-image-wrap");
     const hoverImage = document.querySelector(".hover-image");
     const bItems = document.querySelectorAll(".hover-text a");
