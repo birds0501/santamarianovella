@@ -94,7 +94,7 @@
 
 /* 선택된 값 박스 */
 .selected {
-  width: 17rem;
+  width: 19rem;
   padding: 10px 14px;
   cursor: pointer;
   display: flex;

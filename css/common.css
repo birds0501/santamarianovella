@@ -349,9 +349,9 @@ nav {
 .all-products li:first-child,
 .our-icons li:first-child,
 .sub-menu li {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 400;
-  color: #222;
+  color: #111;
   margin-bottom: 1rem;
 }
 
