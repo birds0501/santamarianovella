@@ -266,7 +266,7 @@ $(function () {
     const aboutDim = document.querySelector(".about-dim");
     const aboutMorePath = document.querySelector(".about-more-icon");
     const texts = document.querySelectorAll(
-      ".about h2, .about strong,.about p",
+      ".about h2, .about strong, .about p",
     );
 
     const tl = gsap.timeline({
@@ -276,6 +276,11 @@ $(function () {
         start: "bottom bottom",
         end: "+=380%",
         pin: true,
+        // [핵심 추가] 스크롤이 트리거 영역에 들어오면 재생, 벗어나면 일시정지!
+        onEnter: () => video.play(),
+        onLeave: () => video.pause(),
+        onEnterBack: () => video.play(),
+        onLeaveBack: () => video.pause(),
       },
     });
 
@@ -291,7 +296,6 @@ $(function () {
         },
         ">",
       )
-
       .to(
         aboutDim,
         {
@@ -321,7 +325,6 @@ $(function () {
         "<=+0.2",
       )
       .to({}, { duration: 0.6 }, ">");
-
     // ===========================================================
     //.scent circle-con
     // ===========================================================
